@@ -1,0 +1,59 @@
+# site settings
+name: Tailsite
+title: Tailsite | Template by 2HAAS
+description: "This description will give user an attention about the site and also used for seo perpose.."
+language: "en"
+tags: [Jekyll, Template, Tailwindcss, Tailsite]
+
+# advance settings
+url: "https://2haas.github.io"
+baseurl: "tailsite"
+markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+highlighter: rouge
+sass:
+    style: compressed
+
+permalink: /:tags/:title/
+
+# pagination plugin
+plugins:
+  - jekyll-paginate
+paginate: 7
+paginate_path: /page-:num
+source: .
+destination: ./_site
+permalink: /:title/
+
+collections:
+  authors:
+    output: true
+  categories:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "categories"
+    values:
+       layout: "category"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+fbappid: "XXXXXXXXXXX"
+googleanalytics: "UA-XXXXXXXXX-X"
+
+exclude: [
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+]
